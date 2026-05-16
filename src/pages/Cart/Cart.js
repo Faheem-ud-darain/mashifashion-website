@@ -1,4 +1,4 @@
-import { state } from '../state.js';
+import { state } from '../../state.js';
 
 export const Cart = () => {
   const cart = state.getCart();
