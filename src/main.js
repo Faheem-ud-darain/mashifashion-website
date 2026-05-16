@@ -5,23 +5,47 @@ import './components/Navbar.css';
 import { Footer } from './components/Footer.js';
 import './components/Footer.css';
 import { Home, initHome } from './pages/Home/Home.js';
+import { Store, initStore } from './pages/Store/Store.js';
+import { ProductDetail, initProductDetail } from './pages/Product/ProductDetail.js';
+import { Cart, initCart } from './pages/Cart/Cart.js';
+import { Checkout, initCheckout } from './pages/Checkout/Checkout.js';
+import { About } from './pages/About/About.js';
+import { Contact } from './pages/Contact/Contact.js';
+import { Dashboard, initDashboard } from './pages/Dashboard/Dashboard.js';
 import { StudioPrivacy } from './pages/Legal/StudioPrivacy.js';
 import { TermsOfService } from './pages/Legal/TermsOfService.js';
 import { ShippingPolicy } from './pages/Legal/ShippingPolicy.js';
 import { ReturnsPolicy } from './pages/Legal/ReturnsPolicy.js';
 import './pages/Legal/Legal.css';
+import './pages/Store/Store.css';
+import './pages/Product/ProductDetail.css';
+import './pages/Cart/Cart.css';
+import './pages/Dashboard/Dashboard.css';
 import { OrderConfirmation } from './pages/Checkout/OrderConfirmation.js';
 import './pages/Checkout/Checkout.css';
 import { state } from './state.js';
 
 const routes = {
   '/': { component: Home, init: initHome },
+  '/store': { component: Store, init: initStore },
+  '/product': { component: ProductDetail, init: initProductDetail },
+  '/cart': { component: Cart, init: initCart },
+  '/checkout': { component: Checkout, init: initCheckout },
+  '/about': { component: About },
+  '/contact': { component: Contact },
+  '/auth': { component: Dashboard, init: initDashboard }, // Merged for now
+  '/dashboard': { component: Dashboard, init: initDashboard },
   '/privacy': { component: StudioPrivacy },
   '/terms': { component: TermsOfService },
   '/shipping': { component: ShippingPolicy },
   '/returns': { component: ReturnsPolicy },
   '/success': { component: OrderConfirmation },
 };
+
+window.navigateTo = (path) => {
+  history.pushState(null, '', path);
+  handleRouting();
+}
 
 const initApp = () => {
   renderLayout();
@@ -79,10 +103,11 @@ const setupGlobalEvents = () => {
     const link = e.target.closest('a');
     if (link) {
       const href = link.getAttribute('href');
-      if (routes[href]) {
+      // Handle both /path and /path.html (for legacy support during migration)
+      const cleanPath = href.replace('.html', '');
+      if (routes[cleanPath]) {
         e.preventDefault();
-        history.pushState(null, '', href);
-        handleRouting();
+        window.navigateTo(cleanPath);
       }
     }
   });

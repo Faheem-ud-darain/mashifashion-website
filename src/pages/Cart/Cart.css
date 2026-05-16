@@ -1,0 +1,146 @@
+.cart-page {
+  padding-top: 150px;
+}
+
+.cart-header {
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+.cart-header .tagline {
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+}
+
+.cart-header h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 5rem;
+  letter-spacing: -3px;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 6rem;
+  align-items: start;
+}
+
+.cart-item {
+  display: flex;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item:first-child { padding-top: 0; }
+
+.ci-image {
+  width: 150px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ci-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ci-info {
+  flex: 1;
+}
+
+.ci-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.ci-meta {
+  font-size: 0.8rem;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.ci-controls {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.qty-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #666;
+}
+
+.ci-price {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.summary-box {
+  background: #f8f8f8;
+  padding: 3rem;
+  border-radius: 20px;
+}
+
+.summary-box h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.summary-row.total {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ddd;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.empty-msg {
+  padding: 6rem;
+  text-align: center;
+  background: #fcfcfc;
+  border-radius: 20px;
+  border: 2px dashed #eee;
+  color: #999;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .cart-layout { grid-template-columns: 1fr; gap: 4rem; }
+}

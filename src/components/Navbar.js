@@ -9,9 +9,9 @@ export const Navbar = () => {
       <div class="container flex-between">
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
-          <li><a href="/store.html">Shop</a></li>
-          <li><a href="/store.html">Sale</a></li>
-          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/store">Shop</a></li>
+          <li><a href="/store">Sale</a></li>
+          <li><a href="/about">About Us</a></li>
         </ul>
         
         <a href="/" class="logo">
@@ -19,9 +19,9 @@ export const Navbar = () => {
         </a>
 
         <div class="nav-actions flex">
-          <a href="/search.html"><i data-lucide="search"></i></a>
-          <a href="/auth.html"><i data-lucide="user"></i></a>
-          <a href="/cart.html" class="cart-link">
+          <a href="/search"><i data-lucide="search"></i></a>
+          <a href="/auth"><i data-lucide="user"></i></a>
+          <a href="/cart" class="cart-link">
             <i data-lucide="shopping-cart"></i>
             ${cartCount > 0 ? `<span class="cart-badge">${cartCount}</span>` : ''}
           </a>

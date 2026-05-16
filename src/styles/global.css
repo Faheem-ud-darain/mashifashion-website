@@ -11,6 +11,10 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   cursor: none;
+  /* Aggressive fix for blue vignette artifacts */
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .container {
@@ -68,10 +72,14 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: #111; /* Dark gray to prevent 'optical blue' on some panels */
   z-index: 10001;
   pointer-events: none;
   opacity: 0;
+  display: none;
   transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
-#page-transition.active { opacity: 1; }
+#page-transition.active { 
+  opacity: 1;
+  display: block;
+}
