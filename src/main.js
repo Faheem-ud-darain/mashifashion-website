@@ -74,7 +74,7 @@ const handleRouting = async () => {
   if (transition) {
     transition.style.display = 'block';
     transition.classList.add('active');
-    await new Promise(r => setTimeout(r, 400));
+    await new Promise(r => setTimeout(r, 200));
   }
   
   const pageContent = document.getElementById('page-content');
