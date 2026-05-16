@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile | Mashi Fashion Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body style="background: #F8F8F8;">
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+
+    <div id="dashboard-layout" style="display: flex; min-height: 100vh;">
+        <!-- Main Dashboard Sidebar -->
+        <aside id="dash-sidebar" style="width: 280px; background: #fff; padding: 2rem; display: flex; flex-direction: column; border-right: 1px solid var(--border-light); position: sticky; top: 0; height: 100vh;">
+            <div class="logo" style="margin-bottom: 4rem;">
+                <h2 style="font-size: 1.8rem; letter-spacing: -1px;">MASHI</h2>
+            </div>
+            <nav style="flex: 1;">
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li class="dash-nav-item" onclick="window.location.href='/dashboard.html'"><i data-lucide="layout-dashboard"></i> Dashboard</li>
+                    <li class="dash-nav-item" onclick="window.location.href='/orders.html'"><i data-lucide="shopping-bag"></i> Orders</li>
+                    <li class="dash-nav-item" onclick="window.location.href='/wishlist.html'"><i data-lucide="heart"></i> Wishlist</li>
+                    <li class="dash-nav-item"><i data-lucide="credit-card"></i> Mashi Points</li>
+                    <li class="dash-nav-item active"><i data-lucide="user"></i> Profile</li>
+                    <li class="dash-nav-item"><i data-lucide="settings"></i> Settings</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main style="flex: 1; padding: 0;">
+            <!-- Profile Settings Header -->
+            <div style="padding: 3rem 4rem 1rem;">
+                <h1 style="font-size: 2.2rem; letter-spacing: -1px; margin-bottom: 2rem;">Settings</h1>
+                
+                <!-- Secondary Nav -->
+                <div class="flex" style="gap: 2rem; border-bottom: 1px solid var(--border-light); margin-bottom: 3rem; padding-bottom: 1rem;">
+                    <span class="settings-tab active">My details</span>
+                    <span class="settings-tab">Profile</span>
+                    <span class="settings-tab">Password</span>
+                    <span class="settings-tab">Billing</span>
+                    <span class="settings-tab">Notifications</span>
+                </div>
+            </div>
+
+            <div style="padding: 0 4rem 4rem;">
+                <!-- Profile Section Card -->
+                <div style="background: #fff; border-radius: 24px; overflow: hidden; border: 1px solid var(--border-light);">
+                    <!-- Banner -->
+                    <div style="height: 200px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); position: relative;">
+                        <div style="position: absolute; right: 2rem; bottom: -1.5rem; display: flex; gap: 1rem;">
+                            <button class="btn btn-outline" style="background: #fff; padding: 0.8rem 2rem; font-size: 0.75rem;">Cancel</button>
+                            <button class="btn btn-dark" style="padding: 0.8rem 2.5rem; font-size: 0.75rem;">Save changes</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Info Area -->
+                    <div style="padding: 0 3rem 4rem; position: relative; margin-top: -60px;">
+                        <div class="flex" style="align-items: flex-end; gap: 2rem; margin-bottom: 4rem;">
+                            <div style="width: 160px; height: 160px; border-radius: 50%; border: 6px solid #fff; overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400" style="width: 100%; height: 100%; object-fit: cover;" />
+                            </div>
+                            <div style="padding-bottom: 1rem;">
+                                <h2 style="font-size: 1.8rem;">Profile</h2>
+                                <p style="color: #666; font-size: 0.9rem;">Update your photo and personal details here.</p>
+                            </div>
+                        </div>
+
+                        <!-- Form Grid -->
+                        <div style="display: flex; flex-direction: column; gap: 2.5rem; max-width: 800px;">
+                            <!-- Username -->
+                            <div class="form-row">
+                                <label>Username</label>
+                                <div class="input-group">
+                                    <span class="prefix">mashistudio.com/</span>
+                                    <input type="text" value="nikky_style" />
+                                </div>
+                            </div>
+
+                            <!-- Website -->
+                            <div class="form-row">
+                                <label>Website</label>
+                                <div class="input-group">
+                                    <span class="prefix">http://</span>
+                                    <input type="text" placeholder="www.yourstudio.com" />
+                                </div>
+                            </div>
+
+                            <!-- Photo Management -->
+                            <div class="form-row" style="align-items: center;">
+                                <div>
+                                    <label>Your photo</label>
+                                    <p style="font-size: 0.75rem; color: #999; margin-top: 0.2rem;">This will be displayed on your profile.</p>
+                                </div>
+                                <div class="flex" style="gap: 1.5rem; align-items: center;">
+                                    <div style="width: 64px; height: 64px; border-radius: 50%; overflow: hidden;">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200" style="width: 100%; height: 100%; object-fit: cover;" />
+                                    </div>
+                                    <div class="flex" style="gap: 1rem; font-size: 0.8rem; font-weight: 700;">
+                                        <span style="color: #999; cursor: pointer;">Delete</span>
+                                        <span style="color: var(--accent-gold); cursor: pointer;">Update</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bio -->
+                            <div class="form-row" style="align-items: flex-start;">
+                                <div>
+                                    <label>Bio</label>
+                                    <p style="font-size: 0.75rem; color: #999; margin-top: 0.2rem;">Write a short introduction.</p>
+                                </div>
+                                <textarea style="width: 100%; min-height: 120px; padding: 1rem; border: 1px solid var(--border-light); border-radius: 12px; font-family: inherit; resize: vertical;" placeholder="Tell us about your style..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="/src/profile.js"></script>
+</body>
+</html>

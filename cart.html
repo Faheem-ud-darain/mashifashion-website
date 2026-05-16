@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Mashi Fashion Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+
+    <nav id="navbar"></nav>
+
+    <main id="cart-main" class="section-padding">
+        <div class="container">
+            <h1 style="font-size: 4rem; margin-bottom: 4rem;">Shopping Cart</h1>
+
+            <div style="display: grid; grid-template-columns: 1fr 400px; gap: 4rem;">
+                <!-- Cart Items List -->
+                <div id="cart-items-container">
+                    <div style="border-bottom: 1px solid var(--border-light); padding-bottom: 1.5rem; margin-bottom: 2rem;">
+                        <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 0.5fr; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #999; letter-spacing: 1px;">
+                            <span>Product Details</span>
+                            <span style="text-align: center;">Quantity</span>
+                            <span style="text-align: center;">Total</span>
+                            <span style="text-align: right;">Action</span>
+                        </div>
+                    </div>
+
+                    <div id="cart-items-list">
+                        <!-- Dynamic Cart Items -->
+                    </div>
+
+                    <div style="margin-top: 3rem;">
+                        <button class="btn btn-outline" style="padding: 1rem 2rem;">Update Cart</button>
+                    </div>
+                </div>
+
+                <!-- Order Summary Sidebar -->
+                <aside id="order-summary">
+                    <div class="glass" style="padding: 2.5rem; border-radius: var(--radius-md);">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 2rem; letter-spacing: -1px;">Order Summary</h3>
+                        
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 2.5rem;">
+                            <input type="text" placeholder="Discount voucher" style="flex: 1; padding: 0.8rem 1.2rem; border: 1px solid var(--border-light); border-radius: 8px; font-family: inherit; outline: none;" />
+                            <button class="btn btn-dark" style="padding: 0.8rem 1.5rem; font-size: 0.7rem;">Apply</button>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 1.2rem; font-size: 0.95rem;">
+                            <div class="flex-between">
+                                <span style="color: #666;">Sub Total</span>
+                                <span style="font-weight: 700;">$1,427.00</span>
+                            </div>
+                            <div class="flex-between">
+                                <span style="color: #666;">Discount (10%)</span>
+                                <span style="color: #000; font-weight: 700;">-$142.70</span>
+                            </div>
+                            <div class="flex-between">
+                                <span style="color: #666;">Delivery Fee</span>
+                                <span style="font-weight: 700;">$50.00</span>
+                            </div>
+                            <hr style="border: none; border-top: 1px solid var(--border-light); margin: 0.5rem 0;" />
+                            <div class="flex-between" style="font-size: 1.2rem; font-weight: 900;">
+                                <span>Total</span>
+                                <span>$1,334.30</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 2.5rem; padding: 1rem; background: var(--bg-light); border-radius: 10px; font-size: 0.75rem; color: #666; display: flex; gap: 10px; align-items: center;">
+                            <i data-lucide="shield-check" style="width: 20px; color: #000;"></i>
+                            <p>90 Day Limited Warranty against manufacturer's defects. <a href="#" style="color: #000; font-weight: 700;">Details</a></p>
+                        </div>
+
+                        <a href="/checkout.html" style="text-decoration: none;">
+                            <button class="btn btn-dark" style="width: 100%; padding: 1.5rem; margin-top: 2.5rem; border-radius: 50px;">Checkout Now</button>
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script type="module" src="/src/cart.js"></script>
+</body>
+</html>

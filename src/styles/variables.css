@@ -1,0 +1,14 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #0a0a0a;
+  --text-main: #000000;
+  --text-muted: #666666;
+  --accent-gold: #c5a059;
+  --border-light: #eeeeee;
+  --section-padding: 120px 0;
+  --container-width: 1400px;
+}
+
+/* Typography tokens */
+.font-outfit { font-family: 'Outfit', sans-serif; }
+.font-inter { font-family: 'Inter', sans-serif; }

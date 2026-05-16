@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store | Mashi Fashion Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+
+    <nav id="navbar"></nav>
+
+    <main id="store-main">
+        <!-- Store Hero -->
+        <section class="section" style="background: var(--bg-light); padding: 60px 0;">
+            <div class="container">
+                <span class="sub-tag" style="margin-bottom: 1rem;">Mashi Studio / Store</span>
+                <h1 style="font-size: 4rem;">All Collections</h1>
+            </div>
+        </section>
+
+        <!-- Store Content -->
+        <section class="section section-padding">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 280px 1fr; gap: 4rem;">
+                    <!-- Sidebar -->
+                    <aside id="sidebar">
+                        <div class="filter-group">
+                            <h4>Categories</h4>
+                            <ul>
+                                <li class="active">All Products</li>
+                                <li>New Arrivals</li>
+                                <li>Hoodies</li>
+                                <li>Outerwear</li>
+                                <li>Accessories</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h4>Filter by Price</h4>
+                            <div class="price-range" style="margin-top: 1rem;">
+                                <input type="range" min="0" max="1000" value="500" style="width: 100%; accent-color: #000;">
+                                <div class="flex-between" style="margin-top: 1rem; font-size: 0.8rem; font-weight: 600;">
+                                    <span>$0</span>
+                                    <span>$1000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Size</h4>
+                            <div class="flex" style="gap: 0.8rem; flex-wrap: wrap;">
+                                <div class="size-btn-sm active">S</div>
+                                <div class="size-btn-sm">M</div>
+                                <div class="size-btn-sm">L</div>
+                                <div class="size-btn-sm">XL</div>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Colors</h4>
+                            <div class="flex" style="gap: 1rem;">
+                                <div style="width: 20px; height: 20px; background: #000; border-radius: 50%;"></div>
+                                <div style="width: 20px; height: 20px; background: #eee; border-radius: 50%; border: 1px solid #ddd;"></div>
+                                <div style="width: 20px; height: 20px; background: #8B4513; border-radius: 50%;"></div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Product Grid Area -->
+                    <div id="product-area">
+                        <div class="flex-between" style="margin-bottom: 3rem;">
+                            <p style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Showing 12 of 48 products</p>
+                            <div class="flex" style="gap: 1rem;">
+                                <span style="font-size: 0.8rem; font-weight: 600;">SORT BY:</span>
+                                <select style="border: none; background: transparent; font-family: inherit; font-weight: 700; cursor: pointer; border-bottom: 1px solid #000; padding-bottom: 2px;">
+                                    <option>Popularity</option>
+                                    <option>Newest</option>
+                                    <option>Price: Low to High</option>
+                                    <option>Price: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="product-grid" id="store-grid">
+                            <!-- Products will be injected here -->
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="flex" style="justify-content: center; margin-top: 6rem; gap: 1rem;">
+                            <div class="pagination-btn active">1</div>
+                            <div class="pagination-btn">2</div>
+                            <div class="pagination-btn">3</div>
+                            <div class="pagination-btn">...</div>
+                            <div class="pagination-btn"><i data-lucide="chevron-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script type="module" src="/src/store.js"></script>
+</body>
+</html>

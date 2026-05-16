@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth | Mashi Fashion Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body style="overflow: hidden;">
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+
+    <main id="auth-container" class="flex" style="height: 100vh; width: 100vw;">
+        <!-- Left Side: Visual -->
+        <div id="auth-visual" style="flex: 1.2; position: relative; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1200" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5));"></div>
+            <div style="position: absolute; top: 40px; left: 40px;">
+                <a href="/" style="text-decoration: none; color: #fff;">
+                    <h2 style="font-size: 2.5rem; letter-spacing: -1px;">MASHI</h2>
+                </a>
+            </div>
+            <div style="position: absolute; bottom: 60px; left: 60px; color: #fff; max-width: 400px;">
+                <h2 style="font-size: 3.5rem; color: #fff; margin-bottom: 1.5rem;">UNLEASH <br/> YOUR STYLE</h2>
+                <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">Join our exclusive studio and get early access to limited drops and personal styling sessions.</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Form -->
+        <div id="auth-form-side" style="flex: 1; display: flex; align-items: center; justify-content: center; background: #fff; padding: 4rem;">
+            <div style="width: 100%; max-width: 450px;">
+                <!-- Login View -->
+                <div id="login-view">
+                    <h2 style="font-size: 3rem; margin-bottom: 1rem;">WELCOME BACK</h2>
+                    <p style="color: #666; margin-bottom: 3rem;">Please enter your details to sign in to your account.</p>
+
+                    <form class="grid" style="gap: 1.5rem;">
+                        <div class="input-group">
+                            <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; letter-spacing: 1px;">Email Address</label>
+                            <input type="email" placeholder="name@example.com" class="auth-input" />
+                        </div>
+                        <div class="input-group">
+                            <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; letter-spacing: 1px;">Password</label>
+                            <input type="password" placeholder="••••••••" class="auth-input" />
+                        </div>
+                        <div class="flex-between" style="margin-top: -0.5rem;">
+                            <label class="flex" style="gap: 0.5rem; font-size: 0.85rem; cursor: pointer;">
+                                <input type="checkbox" style="accent-color: #000;" /> Remember me
+                            </label>
+                            <a href="#" style="font-size: 0.85rem; color: #000; font-weight: 600;">Forgot Password?</a>
+                        </div>
+                        <button class="btn btn-dark" style="width: 100%; padding: 1.2rem; margin-top: 1rem;">Sign In</button>
+                    </form>
+
+                    <div style="margin: 2.5rem 0; text-align: center; position: relative;">
+                        <hr style="border: none; border-top: 1px solid #eee;" />
+                        <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 0 1rem; color: #999; font-size: 0.75rem; font-weight: 600;">OR CONTINUE WITH</span>
+                    </div>
+
+                    <div class="grid grid-2" style="gap: 1rem;">
+                        <button class="btn btn-outline" style="width: 100%; padding: 0.8rem; font-size: 0.7rem;"><i data-lucide="chrome" style="width: 16px; margin-right: 10px;"></i> Google</button>
+                        <button class="btn btn-outline" style="width: 100%; padding: 0.8rem; font-size: 0.7rem;"><i data-lucide="apple" style="width: 16px; margin-right: 10px;"></i> Apple</button>
+                    </div>
+
+                    <p style="text-align: center; margin-top: 3rem; font-size: 0.9rem; color: #666;">
+                        Don't have an account? <a href="#" id="to-signup" style="color: #000; font-weight: 700; text-decoration: none;">Create one for free</a>
+                    </p>
+                </div>
+
+                <!-- Signup View (Hidden by default) -->
+                <div id="signup-view" style="display: none;">
+                    <h2 style="font-size: 3rem; margin-bottom: 1rem;">CREATE ACCOUNT</h2>
+                    <p style="color: #666; margin-bottom: 3rem;">Join the Mashi community and elevate your style game.</p>
+
+                    <form class="grid" style="gap: 1.2rem;">
+                        <div class="input-group">
+                            <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; letter-spacing: 1px;">Full Name</label>
+                            <input type="text" placeholder="John Doe" class="auth-input" />
+                        </div>
+                        <div class="input-group">
+                            <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; letter-spacing: 1px;">Email Address</label>
+                            <input type="email" placeholder="name@example.com" class="auth-input" />
+                        </div>
+                        <div class="input-group">
+                            <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; letter-spacing: 1px;">Password</label>
+                            <input type="password" placeholder="••••••••" class="auth-input" />
+                        </div>
+                        <p style="font-size: 0.75rem; color: #999; line-height: 1.4;">By creating an account, you agree to our <a href="#" style="color: #000;">Terms & Conditions</a> and <a href="#" style="color: #000;">Privacy Policy</a>.</p>
+                        <button class="btn btn-dark" style="width: 100%; padding: 1.2rem; margin-top: 1rem;">Create Account</button>
+                    </form>
+
+                    <p style="text-align: center; margin-top: 3rem; font-size: 0.9rem; color: #666;">
+                        Already have an account? <a href="#" id="to-login" style="color: #000; font-weight: 700; text-decoration: none;">Sign in here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/src/auth.js"></script>
+</body>
+</html>

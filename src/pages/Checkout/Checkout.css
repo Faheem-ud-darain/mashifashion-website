@@ -1,0 +1,33 @@
+.confirmation-page {
+  padding: 120px 0;
+  background: #fff;
+}
+
+.success-icon div {
+  animation: scaleIn 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.order-details-box {
+  transition: 0.5s;
+}
+
+.order-details-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.02);
+}
+
+.confirmation-actions {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .confirmation-page h1 { font-size: 3rem; }
+  .order-details-box { padding: 2rem; }
+  .confirmation-actions { flex-direction: column; width: 100%; }
+  .confirmation-actions button { width: 100%; }
+}

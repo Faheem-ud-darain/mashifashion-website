@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout | Mashi Fashion Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+
+    <nav id="navbar"></nav>
+
+    <main class="section-padding" style="background: #fff;">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 3rem; letter-spacing: -2px;">Checkout</h1>
+
+            <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 5rem;">
+                <!-- Left: Forms -->
+                <div id="checkout-forms">
+                    <!-- Shipping Section -->
+                    <section style="margin-bottom: 4rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;">
+                            <span style="width: 30px; height: 30px; background: #000; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">1</span>
+                            Shipping Information
+                        </h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <input type="text" placeholder="First Name" class="auth-input" />
+                            <input type="text" placeholder="Last Name" class="auth-input" />
+                            <input type="email" placeholder="Email Address" class="auth-input" style="grid-column: span 2;" />
+                            <input type="text" placeholder="Address Line 1" class="auth-input" style="grid-column: span 2;" />
+                            <input type="text" placeholder="City" class="auth-input" />
+                            <input type="text" placeholder="Postal Code" class="auth-input" />
+                        </div>
+                    </section>
+
+                    <!-- Payment Section -->
+                    <section>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;">
+                            <span style="width: 30px; height: 30px; background: #000; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">2</span>
+                            Payment Method
+                        </h3>
+                        
+                        <div class="flex" style="gap: 1rem; margin-bottom: 2.5rem;">
+                            <button class="payment-tab active"><i data-lucide="credit-card"></i> Card</button>
+                            <button class="payment-tab"><i data-lucide="smartphone"></i> Apple Pay</button>
+                            <button class="payment-tab"><i data-lucide="send"></i> PayPal</button>
+                        </div>
+
+                        <div id="card-form" style="background: var(--bg-light); padding: 2.5rem; border-radius: 20px;">
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; color: #666;">Card Number</label>
+                                <input type="text" placeholder="0000 0000 0000 0000" class="auth-input" style="background: #fff;" />
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                                <div>
+                                    <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; color: #666;">Expiry Date</label>
+                                    <input type="text" placeholder="MM / YY" class="auth-input" style="background: #fff;" />
+                                </div>
+                                <div>
+                                    <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.8rem; color: #666;">CVV</label>
+                                    <input type="text" placeholder="***" class="auth-input" style="background: #fff;" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div style="margin-top: 4rem; padding: 1.5rem; border: 1px solid var(--border-light); border-radius: 12px; display: flex; align-items: center; gap: 1rem; color: #666; font-size: 0.85rem;">
+                        <i data-lucide="shield-check" style="color: #000;"></i>
+                        Your payment information is encrypted and securely processed.
+                    </div>
+                </div>
+
+                <!-- Right: Order Summary -->
+                <aside id="checkout-summary">
+                    <div class="glass" style="padding: 2.5rem; border-radius: 20px; position: sticky; top: 120px;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 2rem;">Order Summary</h3>
+                        
+                        <div id="checkout-items" style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
+                            <!-- Dynamic Items -->
+                        </div>
+
+                        <hr style="border: none; border-top: 1px solid var(--border-light); margin: 2rem 0;" />
+
+                        <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                            <div class="flex-between">
+                                <span style="color: #666;">Subtotal</span>
+                                <span style="font-weight: 700;">$1,427.00</span>
+                            </div>
+                            <div class="flex-between">
+                                <span style="color: #666;">Shipping</span>
+                                <span style="font-weight: 700;">Free</span>
+                            </div>
+                            <div class="flex-between" style="font-size: 1.4rem; font-weight: 900; margin-top: 0.5rem;">
+                                <span>Total</span>
+                                <span>$1,427.00</span>
+                            </div>
+                        </div>
+
+                        <button id="place-order-btn" class="btn btn-dark" style="width: 100%; padding: 1.5rem; margin-top: 2.5rem; border-radius: 50px;">Complete Purchase</button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script type="module" src="/src/checkout.js"></script>
+</body>
+</html>

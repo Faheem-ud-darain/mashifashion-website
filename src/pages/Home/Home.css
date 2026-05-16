@@ -1,0 +1,462 @@
+/* Layout Reset & Vignette Fix */
+body, #app {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.home-page {
+  padding-top: 100px;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-main-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 8rem;
+  line-height: 0.85;
+  letter-spacing: -6px;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.hero-description {
+  font-size: 0.95rem;
+  color: #666;
+  max-width: 500px;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero-image-v2 {
+  position: relative;
+}
+
+.image-mask {
+  border-radius: 40% 40% 0 0;
+  overflow: hidden;
+  height: 700px;
+}
+
+.image-mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Marquee */
+.marquee-ticker {
+  background: #000;
+  color: #fff;
+  padding: 1.5rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: scrollMarquee 20s linear infinite;
+}
+
+.marquee-content span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+@keyframes scrollMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Categories Grid */
+.cat-grid-v2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.cat-card {
+  position: relative;
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.cat-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cat-info {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-cat {
+  padding: 0.8rem 2rem;
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.cat-card-small {
+  background: #f8f8f8;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(50% - 1rem);
+  margin-bottom: 2rem;
+}
+
+.cat-card-small:last-child {
+  margin-bottom: 0;
+}
+
+.cat-small-text .tag {
+  font-size: 0.7rem;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.cat-small-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  max-width: 180px;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #000;
+  font-weight: 800;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+
+.cat-small-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.cat-small-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Collections */
+.section-title-v2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  letter-spacing: -2px;
+}
+
+.section-desc-v2 {
+  max-width: 450px;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: right;
+}
+
+.collection-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.tab-btn {
+  background: #f5f5f5;
+  border: 1px solid #eee;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.product-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.product-card-v2 .pc-image {
+  position: relative;
+  height: 450px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background: #f0f0f0;
+}
+
+.product-card-v2 .pc-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.pc-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.product-card-v2:hover .pc-image img {
+  filter: brightness(0.7);
+}
+
+.product-card-v2:hover .pc-overlay {
+  opacity: 1;
+}
+
+.pc-overlay button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.pc-add { background: #fff; color: #000; }
+.pc-buy { background: rgba(0,0,0,0.8); color: #fff; }
+
+.pc-info h4 {
+  font-size: 0.9rem;
+  color: #000;
+  margin-bottom: 0.3rem;
+}
+
+.pc-price {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+/* Bottom Branding */
+.bottom-branding {
+  background: #fff;
+}
+
+.branding-header {
+  padding: 100px 0;
+  text-align: right;
+}
+
+.branding-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 6rem;
+  line-height: 0.9;
+  letter-spacing: -4px;
+  margin-bottom: 2rem;
+}
+
+.branding-subtitle {
+  max-width: 600px;
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.clothing-collection-banner {
+  background: #000;
+  color: #fff;
+  padding: 100px 0;
+}
+
+.banner-image {
+  width: 450px;
+  height: 500px;
+  margin-top: -200px; /* Overlap effect */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-text {
+  max-width: 500px;
+}
+
+.banner-text h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 4rem;
+  letter-spacing: -3px;
+  margin-bottom: 2rem;
+}
+
+.banner-text p {
+  font-size: 1rem;
+  opacity: 0.7;
+  line-height: 1.8;
+}
+
+/* Lookbook Series */
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.lookbook-item {
+  position: relative;
+  height: 800px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.lookbook-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.lookbook-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem;
+  color: #fff;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.lookbook-item:hover img { transform: scale(1.05); }
+.lookbook-item:hover .lookbook-overlay { opacity: 1; }
+
+.lookbook-overlay p { font-size: 0.7rem; font-weight: 800; letter-spacing: 4px; margin-bottom: 1rem; }
+.lookbook-overlay h3 { font-family: 'Outfit', sans-serif; font-size: 3rem; letter-spacing: -2px; }
+
+/* Social Grid */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+}
+
+.social-item {
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.social-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: 0.5s;
+}
+
+.social-item:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Membership */
+.membership-box {
+  background: #f8f8f8;
+  padding: 6rem;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.membership-text h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 4rem;
+  letter-spacing: -3px;
+  margin-bottom: 1.5rem;
+}
+
+.membership-text p {
+  color: #666;
+  max-width: 400px;
+}
+
+.membership-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.membership-form input {
+  padding: 1.2rem 2rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 350px;
+  font-family: inherit;
+}
+
+@media (max-width: 1200px) {
+  .hero-main-title { font-size: 6rem; }
+  .cat-grid-v2 { grid-template-columns: 1fr 1fr; }
+  .product-grid-v2 { grid-template-columns: repeat(2, 1fr); }
+  .branding-title { font-size: 4rem; }
+}
+
+@media (max-width: 1024px) {
+  .lookbook-grid { grid-template-columns: 1fr; }
+  .social-grid { grid-template-columns: repeat(3, 1fr); }
+  .membership-box { flex-direction: column; text-align: center; gap: 3rem; }
+  .membership-form { width: 100%; }
+  .membership-form input { width: 100%; }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | Mashi Fashion Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+
+    <nav id="navbar"></nav>
+
+    <main class="section-padding">
+        <div class="container" style="max-width: 900px;">
+            <header style="text-align: center; margin-bottom: 6rem;">
+                <p style="font-size: 0.8rem; font-weight: 700; color: #999; letter-spacing: 3px; margin-bottom: 1.5rem;">KNOWLEDGE BASE</p>
+                <h1 style="font-size: clamp(3rem, 5vw, 5rem); letter-spacing: -2px; margin-bottom: 2rem;">Frequently Asked Questions</h1>
+                <div style="position: relative; max-width: 500px; margin: 0 auto;">
+                    <input type="text" id="faq-search" placeholder="Search for a topic..." style="width: 100%; padding: 1.2rem 3rem; border: 1px solid #eee; border-radius: 50px; outline: none; font-size: 0.9rem;" />
+                    <i data-lucide="search" style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); width: 18px; color: #999;"></i>
+                </div>
+            </header>
+
+            <!-- FAQ Categories -->
+            <div class="flex" style="justify-content: center; gap: 2rem; margin-bottom: 5rem; flex-wrap: wrap;">
+                <span class="faq-tab active">Ordering</span>
+                <span class="faq-tab">Shipping</span>
+                <span class="faq-tab">Returns</span>
+                <span class="faq-tab">Sizing</span>
+                <span class="faq-tab">Studio</span>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div id="faq-accordion" style="display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Accordions injected here -->
+            </div>
+
+            <!-- Still have questions? -->
+            <div style="margin-top: 8rem; text-align: center; background: #F8F8F8; padding: 4rem; border-radius: 40px;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Still have questions?</h3>
+                <p style="color: #666; margin-bottom: 2rem;">We're here to help. Contact our studio for direct support.</p>
+                <button class="btn btn-dark" onclick="window.location.href='/contact.html'" style="border-radius: 50px; padding: 1rem 3rem;">Contact Support</button>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script type="module" src="/src/faq.js"></script>
+</body>
+</html>

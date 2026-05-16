@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist | Mashi Fashion Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body style="background: #F8F8F8;">
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+
+    <div id="dashboard-layout" style="display: flex; min-height: 100vh;">
+        <!-- Sidebar -->
+        <aside id="dash-sidebar" style="width: 280px; background: #fff; padding: 2rem; display: flex; flex-direction: column; border-right: 1px solid var(--border-light); position: sticky; top: 0; height: 100vh;">
+            <div class="logo" style="margin-bottom: 4rem;">
+                <h2 style="font-size: 1.8rem; letter-spacing: -1px;">MASHI</h2>
+            </div>
+            <nav style="flex: 1;">
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li class="dash-nav-item" onclick="window.location.href='/dashboard.html'"><i data-lucide="layout-dashboard"></i> Dashboard</li>
+                    <li class="dash-nav-item" onclick="window.location.href='/orders.html'"><i data-lucide="shopping-bag"></i> Orders</li>
+                    <li class="dash-nav-item active"><i data-lucide="heart"></i> Wishlist</li>
+                    <li class="dash-nav-item"><i data-lucide="credit-card"></i> Mashi Points</li>
+                    <li class="dash-nav-item"><i data-lucide="user"></i> Profile</li>
+                    <li class="dash-nav-item"><i data-lucide="settings"></i> Settings</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main style="flex: 1; padding: 3rem;">
+            <header class="flex-between" style="margin-bottom: 4rem;">
+                <div>
+                    <h1 style="font-size: 2.5rem; letter-spacing: -1px;">My Wishlist</h1>
+                    <p style="color: #999; font-size: 0.9rem; margin-top: 0.5rem;">Your curated selection of studio favorites.</p>
+                </div>
+                <button class="btn btn-dark" style="border-radius: 50px; padding: 0.8rem 2rem; font-size: 0.7rem;">Share Wishlist</button>
+            </header>
+
+            <div id="wishlist-grid" class="product-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+                <!-- Wishlist items dynamic -->
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="/src/wishlist.js"></script>
+</body>
+</html>
