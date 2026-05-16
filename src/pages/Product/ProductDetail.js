@@ -3,67 +3,128 @@ import { state } from '../../state.js';
 export const ProductDetail = () => {
   return `
     <div class="product-detail-page section-padding">
-      <div class="container">
-        <div class="pd-grid">
-          <div class="pd-images">
-            <div class="pd-main-image">
-              <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1200" alt="Product" id="main-product-img" />
-            </div>
-            <div class="pd-thumbnails">
-              <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=200" class="active" />
-              <img src="https://images.unsplash.com/photo-1578932750294-f5075e85f44a?q=80&w=200" />
-              <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=200" />
-            </div>
-          </div>
-          
-          <div class="pd-info">
-            <p class="pd-category">SERIES 01 / OUTERWEAR</p>
-            <h1 class="pd-title">Architectural Oversized Hoodie</h1>
-            <p class="pd-price">$185.00</p>
-            
-            <div class="pd-description">
-              <p>A structural silhouette crafted from high-density French Terry. Featuring dropped shoulders, a double-layered hood, and the signature 'Reflect' architectural seam details.</p>
-            </div>
+      <div class="container" style="padding-top: 40px;">
+          <!-- Breadcrumbs -->
+          <nav class="breadcrumbs" style="font-size: 0.8rem; color: #999; margin-bottom: 30px;">
+            <a href="/">Home</a> &nbsp; <i data-lucide="chevron-right" style="width: 12px; vertical-align: middle;"></i> &nbsp; <span>Product details</span>
+          </nav>
 
-            <div class="pd-options">
-              <div class="option-group">
-                <label>Select Size</label>
-                <div class="size-selector">
-                  <button>S</button>
-                  <button class="active">M</button>
-                  <button>L</button>
-                  <button>XL</button>
+          <div class="product-layout" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; margin-bottom: 80px;">
+            <!-- Gallery -->
+            <div class="product-gallery">
+              <div class="main-img glass" style="aspect-ratio: 1; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem;">
+                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1000" style="width: 100%; height: 100%; object-fit: cover;" id="main-product-image" />
+              </div>
+              <div class="thumbnails grid" style="grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                <div class="thumb glass active" style="aspect-ratio: 1; border-radius: var(--radius-md); overflow: hidden; cursor: pointer; border: 2px solid #000;">
+                  <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=300" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="thumb glass" style="aspect-ratio: 1; border-radius: var(--radius-md); overflow: hidden; cursor: pointer;">
+                  <img src="https://images.unsplash.com/photo-1539109132381-31512579f455?q=80&w=300" style="width: 100%; height: 100%; object-fit: cover;" />
+                </div>
+                <div class="thumb glass" style="aspect-ratio: 1; border-radius: var(--radius-md); overflow: hidden; cursor: pointer;">
+                  <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=300" style="width: 100%; height: 100%; object-fit: cover;" />
                 </div>
               </div>
+            </div>
+
+            <!-- Info -->
+            <div class="product-info-panel">
+              <span class="sub-tag" style="margin-bottom: 0.5rem; display: block; font-size: 0.8rem; font-weight: 800; color: var(--accent-gold); text-transform: uppercase;">Man Fashion</span>
+              <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 900;">Loose Fit Hoodie</h1>
+              <p class="price" style="font-size: 2rem; font-weight: 800; color: #000; margin-bottom: 1.5rem;">$24.99</p>
               
-              <div class="option-group">
-                <label>Color</label>
-                <div class="color-selector">
-                  <button style="background: #111;" class="active"></button>
-                  <button style="background: #333;"></button>
-                  <button style="background: #f0f0f0;"></button>
+              <div class="delivery-notice glass" style="padding: 1rem; border-radius: 50px; display: flex; align-items: center; gap: 0.8rem; font-size: 0.8rem; margin-bottom: 2rem; background: #f8f8f8;">
+                <i data-lucide="clock" style="width: 16px;"></i>
+                <span>Order in <b>02:30:25</b> to get next day delivery</span>
+              </div>
+
+              <div class="size-selector" style="margin-bottom: 2.5rem;">
+                <p style="font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem;">Select Size</p>
+                <div class="flex" style="gap: 0.8rem;">
+                  <button class="size-btn active">S</button>
+                  <button class="size-btn">M</button>
+                  <button class="size-btn">L</button>
+                  <button class="size-btn" disabled style="opacity: 0.3; cursor: not-allowed;">XL</button>
+                  <button class="size-btn">XXL</button>
+                </div>
+              </div>
+
+              <div class="purchase-actions flex" style="gap: 1rem; margin-bottom: 3rem;">
+                <button class="btn btn-dark" style="flex: 1; padding: 1.2rem; border-radius: 50px;" id="add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-outline" style="width: 60px; height: 60px; padding: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i data-lucide="heart"></i></button>
+              </div>
+
+              <div class="details-accordion">
+                <div class="accordion-item" style="border-top: 1px solid #eee; padding: 1.5rem 0;">
+                  <div class="flex-between" style="cursor: pointer;">
+                    <h4 style="font-size: 1rem; text-transform: none; letter-spacing: 0; font-weight: 700;">Description & Fit</h4>
+                    <i data-lucide="chevron-down"></i>
+                  </div>
+                  <div class="accordion-content" style="margin-top: 1rem; font-size: 0.9rem; color: #666; line-height: 1.6;">
+                    Loose-fit sweatshirt hoodie in medium weight cotton-blend fabric with a generous, but not oversized silhouette. Jersey-lined, drawstring hood, dropped shoulders, long sleeves, and a kangaroo pocket.
+                  </div>
+                </div>
+                <div class="accordion-item" style="border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 1.5rem 0;">
+                  <div class="flex-between" style="cursor: pointer;">
+                    <h4 style="font-size: 1rem; text-transform: none; letter-spacing: 0; font-weight: 700;">Shipping</h4>
+                    <i data-lucide="chevron-down"></i>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="pd-actions">
-              <button class="btn btn-dark btn-block" id="add-to-cart-btn">Add to Studio Cart</button>
-              <button class="btn btn-outline btn-block">Add to Wishlist</button>
-            </div>
-
-            <div class="pd-meta">
-              <div class="meta-item">
-                <i data-lucide="truck"></i>
-                <span>Free Studio Shipping on orders over $200</span>
-              </div>
-              <div class="meta-item">
-                <i data-lucide="refresh-cw"></i>
-                <span>30-Day Draft Exchange Policy</span>
-              </div>
-            </div>
           </div>
+
+          <!-- Reviews Section -->
+          <section id="product-reviews" style="margin-bottom: 100px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 3rem; font-weight: 900;">Rating & Reviews</h2>
+            <div class="reviews-layout" style="display: grid; grid-template-columns: 1fr 2fr; gap: 5rem;">
+              <div class="rating-overview">
+                <div class="flex" style="align-items: baseline; gap: 1rem; margin-bottom: 2rem;">
+                  <span style="font-size: 6rem; font-weight: 900;">4,5</span>
+                  <span style="font-size: 1.5rem; color: #999;">/ 5</span>
+                </div>
+                <p style="font-size: 0.8rem; margin-bottom: 2rem; font-weight: 600;">(50 New Reviews)</p>
+                <!-- Rating Bars -->
+                <div class="rating-bars flex" style="flex-direction: column; gap: 0.8rem;">
+                  ${[5, 4, 3, 2, 1].map(num => `
+                    <div class="bar-item flex" style="align-items: center; gap: 1rem;">
+                      <span style="font-size: 0.8rem; width: 10px;">${num}</span>
+                      <i data-lucide="star" style="width: 12px; color: var(--accent-gold); fill: var(--accent-gold);"></i>
+                      <div class="bar-bg" style="flex: 1; height: 4px; background: #eee; border-radius: 2px; position: relative;">
+                        <div class="bar-fill" style="width: ${num === 5 ? '80%' : num === 4 ? '40%' : '10%'}; height: 100%; background: #000; border-radius: 2px;"></div>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+              <div class="reviews-list" style="position: relative;">
+                <div class="review-card glass" style="padding: 2.5rem; border-radius: var(--radius-lg); background: #fff;">
+                  <div class="flex-between" style="margin-bottom: 1.5rem;">
+                    <div class="flex" style="gap: 1rem; align-items: center;">
+                      <img src="https://i.pravatar.cc/100?u=alex" style="width: 50px; height: 50px; border-radius: 50%;" />
+                      <div>
+                        <h4 style="font-size: 1rem; text-transform: none; letter-spacing: 0; font-weight: 700;">Alex Mathio</h4>
+                        <div style="color: var(--accent-gold);">
+                          <i data-lucide="star" style="width: 12px; fill: currentColor;"></i>
+                          <i data-lucide="star" style="width: 12px; fill: currentColor;"></i>
+                          <i data-lucide="star" style="width: 12px; fill: currentColor;"></i>
+                          <i data-lucide="star" style="width: 12px; fill: currentColor;"></i>
+                          <i data-lucide="star" style="width: 12px; fill: currentColor;"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <span style="font-size: 0.8rem; color: #999; font-weight: 600;">13 Oct 2024</span>
+                  </div>
+                  <p style="font-style: italic; line-height: 1.6; color: #444;">"Mashi's dedication to sustainability and ethical practices resonates strongly with today's consumers, positioning the brand as a responsible choice in the fashion world."</p>
+                </div>
+                <button class="scroll-btn" style="position: absolute; right: -25px; top: 50%; transform: translateY(-50%); background: #fff; border: 1px solid #eee; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); cursor: pointer;">
+                  <i data-lucide="chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </section>
         </div>
-      </div>
     </div>
   `;
 }
@@ -73,13 +134,22 @@ export const initProductDetail = () => {
   if (addBtn) {
     addBtn.addEventListener('click', () => {
       const product = {
-        id: 1,
-        name: 'Architectural Oversized Hoodie',
-        price: 185,
-        img: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=600'
+        id: 101, // Example ID for this product
+        name: 'Loose Fit Hoodie',
+        price: 24.99,
+        img: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1000'
       };
       state.addToCart(product);
-      alert('Added to cart');
+      // Optional: show a toast instead of alert
+      const toast = document.createElement('div');
+      toast.style.cssText = 'position: fixed; bottom: 30px; right: 30px; background: #000; color: #fff; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; z-index: 10000; transform: translateY(100px); transition: 0.5s;';
+      toast.innerText = 'Added to Studio Bag';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.style.transform = 'translateY(0)', 100);
+      setTimeout(() => {
+        toast.style.transform = 'translateY(100px)';
+        setTimeout(() => toast.remove(), 500);
+      }, 3000);
     });
   }
   

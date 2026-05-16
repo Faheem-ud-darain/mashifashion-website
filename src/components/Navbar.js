@@ -15,12 +15,12 @@ export const Navbar = () => {
         </ul>
         
         <a href="/" class="logo">
-          <h2>REFLECT</h2>
+          <h2 style="font-size: 2rem; font-weight: 900; letter-spacing: -1px;">MASHI</h2>
         </a>
 
         <div class="nav-actions flex">
           <a href="/search"><i data-lucide="search"></i></a>
-          <a href="/auth"><i data-lucide="user"></i></a>
+          <a href="/dashboard"><i data-lucide="user"></i></a>
           <a href="/cart" class="cart-link">
             <i data-lucide="shopping-cart"></i>
             ${cartCount > 0 ? `<span class="cart-badge">${cartCount}</span>` : ''}

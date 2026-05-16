@@ -12,6 +12,10 @@ import { Checkout, initCheckout } from './pages/Checkout/Checkout.js';
 import { About } from './pages/About/About.js';
 import { Contact } from './pages/Contact/Contact.js';
 import { Dashboard, initDashboard } from './pages/Dashboard/Dashboard.js';
+import { Orders, initOrders } from './pages/Dashboard/Orders.js';
+import { Wishlist, initWishlist } from './pages/Dashboard/Wishlist.js';
+import { Profile, initProfile } from './pages/Dashboard/Profile.js';
+import { MashiPoints, initMashiPoints } from './pages/Dashboard/MashiPoints.js';
 import { StudioPrivacy } from './pages/Legal/StudioPrivacy.js';
 import { TermsOfService } from './pages/Legal/TermsOfService.js';
 import { ShippingPolicy } from './pages/Legal/ShippingPolicy.js';
@@ -35,6 +39,10 @@ const routes = {
   '/contact': { component: Contact },
   '/auth': { component: Dashboard, init: initDashboard }, // Merged for now
   '/dashboard': { component: Dashboard, init: initDashboard },
+  '/orders': { component: Orders, init: initOrders },
+  '/wishlist': { component: Wishlist, init: initWishlist },
+  '/profile': { component: Profile, init: initProfile },
+  '/points': { component: MashiPoints, init: initMashiPoints },
   '/privacy': { component: StudioPrivacy },
   '/terms': { component: TermsOfService },
   '/shipping': { component: ShippingPolicy },
@@ -42,7 +50,7 @@ const routes = {
   '/success': { component: OrderConfirmation },
 };
 
-window.navigateTo = (path) => {
+window.navigateTo = function(path) {
   history.pushState(null, '', path);
   handleRouting();
 }
@@ -65,7 +73,7 @@ const renderLayout = () => {
   initNavbar();
 }
 
-const handleRouting = async () => {
+async function handleRouting() {
   const transition = document.getElementById('page-transition');
   const path = window.location.pathname;
   const route = routes[path] || routes['/'];
@@ -103,8 +111,12 @@ const setupGlobalEvents = () => {
     const link = e.target.closest('a');
     if (link) {
       const href = link.getAttribute('href');
-      // Handle both /path and /path.html (for legacy support during migration)
-      const cleanPath = href.replace('.html', '');
+      if (!href || href.startsWith('http') || href.startsWith('#')) return;
+
+      // Handle both /path and path.html
+      let cleanPath = href.replace('.html', '');
+      if (!cleanPath.startsWith('/')) cleanPath = '/' + cleanPath;
+      
       if (routes[cleanPath]) {
         e.preventDefault();
         window.navigateTo(cleanPath);
@@ -121,7 +133,7 @@ const setupGlobalEvents = () => {
 
 const updateGlobalCounters = () => {
   const cart = state.getCart();
-  const cartCount = document.querySelector('.nav-actions a[href="/cart.html"] i');
+  const cartCount = document.querySelector('.nav-actions a[href="/cart"] i');
   // Logic to show count badge if needed
 }
 
